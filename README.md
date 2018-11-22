@@ -45,14 +45,16 @@ var esitoCaricamento = skynetSso.InviaFatturaAttiva("c:\\temp\\IT00000000000_000
 ```cs
 var idFattura = "2d4ef"; // Codice alfanumerico della fattura attiva da recuperare
 var notifiche = false;   // true per includere le notifiche nella risposta dal server
-var fattturaAttiva = skynetSso.GetFatturaAttiva(new GetFatturaAttivaRequest { Id = idFattura, Notifiche = notifiche });
+var fattturaAttiva = skynetSso.GetFatturaAttiva(
+    new GetFatturaAttivaRequest { Id = idFattura, Notifiche = notifiche });
 ```
 
 #### Elenco delle fatture attive
 ```cs
 var year = 2018;    // Anno di filtro
 var month = 5;      // Mese di filtro (da 1 a 12)
-var elencoFattureAttive = skynetSso.ElencoFattureAttive(new ElencoFattureAttiveRequest { Year = year, Month = month });
+var elencoFattureAttive = skynetSso.ElencoFattureAttive(
+    new ElencoFattureAttiveRequest { Year = year, Month = month });
 ```
 
 ### Ciclo passivo
@@ -61,7 +63,8 @@ Recupero dell'elenco delle fatture passive all'interno di un periodo di riferime
 ```cs
 var from = new DateTime(2018, 11, 1); // Data di inizio del periodo di filtro
 var to = new DateTime(2018, 11, 30);  // Data di fine del periodo di filtro
-var nuoveFatturePassive = skynetSso.NuoveFatturePassive(new FatturePassiveNuoveRequest { From = from, To = to });
+var nuoveFatturePassive = skynetSso.NuoveFatturePassive(
+    new FatturePassiveNuoveRequest { From = from, To = to });
 ```
 
 #### Elenco fatture passive
@@ -69,12 +72,14 @@ Recupero dell'elenco delle fatture passive all'interno di un periodo di riferime
 ```cs
 var from = new DateTime(2018, 11, 1); // Data di inizio del periodo di filtro
 var to = new DateTime(2018, 11, 30);  // Data di fine del periodo di filtro
-var elencoFatturePassive = skynetSso.ElencoFatturePassive(new ElencoFatturePassiveRequest { From = from, To = to });
+var elencoFatturePassive = skynetSso.ElencoFatturePassive(
+    new ElencoFatturePassiveRequest { From = from, To = to });
 ```
 
 #### Recupero fattura passiva
 Recupero dei dati di dettaglio di una fattura passiva
 ```cs
 var idFatturaPassiva = "13dw";
-var getFatturaPassiva = skynetSso.GetFatturaPassiva(new GetFatturaPassivaRequest { Id = idFatturaPassiva });
+var getFatturaPassiva = skynetSso.GetFatturaPassiva(
+    new GetFatturaPassivaRequest { Id = idFatturaPassiva });
 ```
