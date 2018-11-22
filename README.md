@@ -28,12 +28,15 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 La libreria è compatibile con [la versione 3.0 delle specifiche di integrazione disponibili di SKYNET](https://raw.githubusercontent.com/massivex/skynet-ws-client-net/master/docs/20181115-SKYNET-API-30.pdf)
 
 ### Configurazione
-Tutte le chiamate devono essere eseguite creando un oggetto di tipo `SkynetSso` come segue. I parametri necessari per la creazione sono l'indirizzo del server (endpoint), la username e la password di accesso.
+Tutte le chiamate devono essere eseguite creando un oggetto di tipo `SkynetSso` come segue. La classe **SkynetSso** richiede un oggetto **SkynetSsoConfig** ed i parametri necessari per la creazione sono l'indirizzo del server (host), la username e la password di accesso.
 ```cs
-var endpoint = "https://sso.sediva.it";
-var username = "utente-test";
-var password = "password-test";
-var skynetSso = new SkynetSso(hostname, username, password);
+var config = new SkynetSsoConfig
+    {
+        Host = "https://sso.sediva.it",
+        Username = "utente-test",
+        Password = "password-test"
+    };
+var skynetSso = new SkynetSso(config);
 ```
 
 ### Gestione errori
