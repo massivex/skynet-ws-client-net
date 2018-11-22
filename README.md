@@ -70,7 +70,7 @@ var esitoCaricamento = skynetSso.InviaFatturaAttiva("c:\\temp\\IT00000000000_000
 var esitoCaricamento = skynetSso.InviaFatturaAttiva("IT00000000000_00000.xml", xmlBytes);
 ```
 
-##### Recupero di una fattura attiva
+#### Recupero di una fattura attiva
 ```cs
 var idFattura = "2d4ef"; // Codice alfanumerico della fattura attiva da recuperare
 var notifiche = false;   // true per includere le notifiche nella risposta dal server
