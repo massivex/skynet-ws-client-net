@@ -1,5 +1,5 @@
 # SKYNET WebServices
-SKYNET WebServices - Integrazione con i gestionali .NET
+SKYNET WebServices - Integrazione con i gestionali .NET con la piattaforma contabile [SKYNET](https://skynet.sediva.it)
 
 ## Caratteristiche
 La libreria permette al software gestionale di utilizzare la piattaforma SKYNET per la veicolazione allo SdI dei documenti contabili, nonché per l'immediata loro messa a disposizione al proprio commercialista.
