@@ -28,9 +28,12 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 La libreria è compatibile con [la versione 3.0 delle specifiche di integrazione disponibili di SKYNET](https://raw.githubusercontent.com/massivex/skynet-ws-client-net/master/docs/20181115-SKYNET-API-30.pdf)
 
 ### Configurazione
-Tutte le chiamate devono essere eseguito utilizzando la class `SkynetSso` come seguneche richiede in input l'indirizzo del server, la username e la password di accesso.
+Tutte le chiamate devono essere eseguite creando un oggetto di tipo `SkynetSso` come segue. I parametri necessari per la creazione sono l'indirizzo del server (endpoint), la username e la password di accesso.
 ```cs
-var skynetSso = new SkynetSso("https://sso.sediva.it", "gestionale@99999", "password");
+var endpoint = "https://sso.sediva.it";
+var username = "utente-test";
+var password = "password-test";
+var skynetSso = new SkynetSso(hostname, username, password);
 ```
 In caso di errore i metodi ritornano un'eccezione di tipo `SkynetSsoException` che riporta il messaggio con la motivazione dell'errore (es. file XML non conforme alle spcifiche).
 
