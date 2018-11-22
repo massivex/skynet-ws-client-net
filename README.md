@@ -35,13 +35,36 @@ var username = "utente-test";
 var password = "password-test";
 var skynetSso = new SkynetSso(hostname, username, password);
 ```
+
+### Gestione errori
 In caso di errore i metodi ritornano un'eccezione di tipo `SkynetSsoException` che riporta il messaggio con la motivazione dell'errore (es. file XML non conforme alle spcifiche).
+Di seguito un esempio per l'invio di una fattua attiva con la gestione degli errori.
+```cs
+try {
+    // Invio della fattura
+    var esitoCaricamento = skynetSso.InviaFatturaAttiva("c:\\temp\\IT00000000000_00000.xml");
+
+    // Recupero dell'id fattura generato dal server
+    var idFatturaCaricata = fatturaCaricata.Data[0].Id;
+
+    // Visualizzo l'id della fattura caricata
+    Console.WriteLine($"Fattura caricata con id = '{idFatturaCaricata}'");
+}
+catch (SkynetSsoException ex)
+{
+    // In caso di errore visualizzo il messaggio di errore
+    Console.WriteLine($"Fattura NON caricata. Errore ritornato dal server {ex.Message}");
+}
+```
 
 ### Ciclo attivo
 #### Invio di una fattura elettronica XML
 ```cs
+// Invio di una fattura da file esterno (percorso completo)
 var esitoCaricamento = skynetSso.InviaFatturaAttiva("c:\\temp\\IT00000000000_00000.xml");
-// L'esito del caricamento ritorna l'id della fattura elettronica caricata
+
+// Invio di una fattura da array di bytes
+var esitoCaricamento = skynetSso.InviaFatturaAttiva("IT00000000000_00000.xml", xmlBytes);
 ```
 
 ##### Recupero di una fattura attiva
