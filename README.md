@@ -25,7 +25,7 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 
 ## Documentazione
 ### Specifiche
-La libreria è compatibile con [la versione 3.0 delle specifiche di integrazione disponibili di SKYNET](https://raw.githubusercontent.com/massivex/skynet-ws-client-net/master/docs/20181115-SKYNET-API-30.pdf)
+La libreria è compatibile con [la versione 3.0 delle specifiche di integrazione disponibili di SKYNET](https://raw.githubusercontent.com/massivex/skynet-ws-client-net/master/docs/20181128-SKYNET-API-30-b.pdf)
 
 ### Configurazione
 Tutte le chiamate devono essere eseguite creando un oggetto di tipo `SkynetSso` come segue. La classe **SkynetSso** richiede un oggetto **SkynetSsoConfig** ed i parametri necessari per la creazione sono l'indirizzo del server (host), la username e la password di accesso.
